@@ -26,3 +26,8 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build
         run: mvn -B verify
+      - name: Upload GitHub Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: CoreProtect_origin Plugin 
+          path: ./target/*.jar
